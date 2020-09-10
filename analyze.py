@@ -41,32 +41,6 @@ def load_data(file: Path) -> T.Dict[str, pandas.DataFrame]:
         "co2": pandas.DataFrame.from_dict(co2, "index").sort_index(),
     }
 
-    print(type(temperature))
-    print(type(data))
-    #print(data['temperature']['office'].values())
-    newdict = data['temperature']['office'];
-    #print(newdict.values)
-    #print(data['temperature'].index)
-
-    #timeintervals = data['temperature'].index.to_pytimedelta()
-    #print(timeintervals)
-    #times = data['temperature'].index
-    #print(type(times))
-    #time1 = times[:-1]
-    #time2 = times[1:]
-    #print(times, "\n")
-    #print(time1,"\n")
-    #print(time2,"\n")
-    #print(times.size)
-    #print(time1.size)
-    #print(time2.size)
-
-    #timeintervals = time2-time1;
-    #print(timeintervals);
-    #print(timeintervals.size)
-    #timeintervals = [time2 - time1 for time1, time2 in zip(times[:-1], times[1:])]
-    #print(timeintervals)
-
     return data
 
 
@@ -79,10 +53,6 @@ if __name__ == "__main__":
 
     data = load_data(file)
 
-
-
-
-    #print(data)
     for k in data:
         # data[k].plot()
         time = data[k].index
@@ -91,48 +61,30 @@ if __name__ == "__main__":
         plt.hist(np.diff(time.values).astype(np.int64) // 1000000000)
         plt.xlabel("Time (seconds)")
 
-        print(k)
+        print("Sensor: ", k);
+        print(k, "median by room:")
         print(data[k].median())
+        print(k, "variance by room:")
         print(data[k].std()**2)
         pdf = data[k].plot.density()
-
-        
+        plt.xlabel(k)
+        title = k + ": Probability Density Function"
+        plt.title(title)
 
         print("\n")
 
-    plt.show()
-
     times = data["temperature"].index
-    print("times:\n", times);
     timeintervals = times[1:]-times[:-1]
-    print(type(timeintervals))
-    print(type(timeintervals.total_seconds()))
-    print("mean: ", timeintervals.mean().total_seconds())
-    #print(timeintervals.std().nanoseconds)
+    print("Mean of time intervals: ", timeintervals.mean().total_seconds())
     std = timeintervals.std().total_seconds()
     var = std**2
-    #print(float(std.seconds))
-    print("var:", var)
-
-
-    print(timeintervals);
-    print(timeintervals.total_seconds())
-    print(timeintervals.total_seconds().to_series())
-    print(type(timeintervals.total_seconds().to_series()))
+    print("Variance of time intervals:", var)
+    
 
     timeintervalsseconds = timeintervals.total_seconds().to_series()
-
-
-    print(type(timeintervalsseconds.to_frame()))
-    timedata = timeintervalsseconds.to_frame(index = False);
-    timedata.plot.density()
+    timedata = timeintervalsseconds.to_frame();
+    pdftime = timedata.plot.density()
     plt.xlabel("Time intervals (seconds)")
-    plt.ylabel("Probability")
-    plt.title("PDF plot of the time intervals")
-    plt.savefig("PDF_time_intervals.png")
-    #print(timeintervals.to_frame()[0][1].total_seconds())
-    #timeintervals.to_frame().plot.hist()
-    #pdf2 = timeintervals.to_frame().plot.density()
+    plt.title("Time Intervals: Probability Density Function")
 
-    #plt.show()
-    #pdf.show()
+    plt.show()
