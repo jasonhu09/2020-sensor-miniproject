@@ -79,6 +79,9 @@ if __name__ == "__main__":
 
     data = load_data(file)
 
+
+
+
     #print(data)
     for k in data:
         # data[k].plot()
@@ -93,23 +96,43 @@ if __name__ == "__main__":
         print(data[k].std()**2)
         pdf = data[k].plot.density()
 
-        times = data[k].index
-        timeintervals = times[1:]-times[:-1]
-        print("mean: ", timeintervals.mean().total_seconds())
-        #print(timeintervals.std().nanoseconds)
-        std = timeintervals.std().total_seconds()
-        var = std**2
-        #print(float(std.seconds))
-        print("var:", var)
-
-
-        print(type(timeintervals.to_frame()))
-        timedata = timeintervals.to_frame();
-        print(timeintervals.to_frame()[0][1].total_seconds())
-        #timeintervals.to_frame().plot.hist()
-        #pdf2 = timeintervals.to_frame().plot.density()
+        
 
         print("\n")
+
+    plt.show()
+
+    times = data["temperature"].index
+    print("times:\n", times);
+    timeintervals = times[1:]-times[:-1]
+    print(type(timeintervals))
+    print(type(timeintervals.total_seconds()))
+    print("mean: ", timeintervals.mean().total_seconds())
+    #print(timeintervals.std().nanoseconds)
+    std = timeintervals.std().total_seconds()
+    var = std**2
+    #print(float(std.seconds))
+    print("var:", var)
+
+
+    print(timeintervals);
+    print(timeintervals.total_seconds())
+    print(timeintervals.total_seconds().to_series())
+    print(type(timeintervals.total_seconds().to_series()))
+
+    timeintervalsseconds = timeintervals.total_seconds().to_series()
+
+
+    print(type(timeintervalsseconds.to_frame()))
+    timedata = timeintervalsseconds.to_frame(index = False);
+    timedata.plot.density()
+    plt.xlabel("Time intervals (seconds)")
+    plt.ylabel("Probability")
+    plt.title("PDF plot of the time intervals")
+    plt.savefig("PDF_time_intervals.png")
+    #print(timeintervals.to_frame()[0][1].total_seconds())
+    #timeintervals.to_frame().plot.hist()
+    #pdf2 = timeintervals.to_frame().plot.density()
 
     #plt.show()
     #pdf.show()
