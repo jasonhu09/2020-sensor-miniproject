@@ -96,7 +96,7 @@ if __name__ == "__main__":
         print(data[k].std()**2)
         pdf = data[k].plot.density()
 
-        
+
 
         print("\n")
 
