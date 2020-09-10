@@ -11,8 +11,12 @@ The server greets the client with "IoT server starting:  localhost port 8765". T
 2. What are the median and variance observed from the occupancy data?
 
 3. Plot the probability distribution function for each sensor type?
+![Image](images/Temperature_PDF.png)
+![Image](images/Occupancy_PDF.png)
+![Image](images/CO2_PDF.png)
 
 4. What is the mean and variance of the time interval of the sensor readings? Please plot its probability distribution function. Does it mimic a well-known distribution for connection intervals in large systems?
+![Image](images/Time_Interval_PDF.png)
 
 **Task 3**
 1. Does a persistent change in temperature always indicate a failed sensor?
