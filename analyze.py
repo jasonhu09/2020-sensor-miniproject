@@ -29,6 +29,7 @@ def load_data(file: Path) -> T.Dict[str, pandas.DataFrame]:
             r = json.loads(line)
             room = list(r.keys())[0]
             time = datetime.fromisoformat(r[room]["time"])
+            #print(time)
 
             temperature[time] = {room: r[room]["temperature"][0]}
             occupancy[time] = {room: r[room]["occupancy"][0]}
@@ -39,6 +40,32 @@ def load_data(file: Path) -> T.Dict[str, pandas.DataFrame]:
         "occupancy": pandas.DataFrame.from_dict(occupancy, "index").sort_index(),
         "co2": pandas.DataFrame.from_dict(co2, "index").sort_index(),
     }
+
+    print(type(temperature))
+    print(type(data))
+    #print(data['temperature']['office'].values())
+    newdict = data['temperature']['office'];
+    #print(newdict.values)
+    #print(data['temperature'].index)
+
+    #timeintervals = data['temperature'].index.to_pytimedelta()
+    #print(timeintervals)
+    #times = data['temperature'].index
+    #print(type(times))
+    #time1 = times[:-1]
+    #time2 = times[1:]
+    #print(times, "\n")
+    #print(time1,"\n")
+    #print(time2,"\n")
+    #print(times.size)
+    #print(time1.size)
+    #print(time2.size)
+
+    #timeintervals = time2-time1;
+    #print(timeintervals);
+    #print(timeintervals.size)
+    #timeintervals = [time2 - time1 for time1, time2 in zip(times[:-1], times[1:])]
+    #print(timeintervals)
 
     return data
 
@@ -52,6 +79,7 @@ if __name__ == "__main__":
 
     data = load_data(file)
 
+    #print(data)
     for k in data:
         # data[k].plot()
         time = data[k].index
@@ -60,4 +88,28 @@ if __name__ == "__main__":
         plt.hist(np.diff(time.values).astype(np.int64) // 1000000000)
         plt.xlabel("Time (seconds)")
 
-    plt.show()
+        print(k)
+        print(data[k].median())
+        print(data[k].std()**2)
+        pdf = data[k].plot.density()
+
+        times = data[k].index
+        timeintervals = times[1:]-times[:-1]
+        print("mean: ", timeintervals.mean().total_seconds())
+        #print(timeintervals.std().nanoseconds)
+        std = timeintervals.std().total_seconds()
+        var = std**2
+        #print(float(std.seconds))
+        print("var:", var)
+
+
+        print(type(timeintervals.to_frame()))
+        timedata = timeintervals.to_frame();
+        print(timeintervals.to_frame()[0][1].total_seconds())
+        #timeintervals.to_frame().plot.hist()
+        #pdf2 = timeintervals.to_frame().plot.density()
+
+        print("\n")
+
+    #plt.show()
+    #pdf.show()
