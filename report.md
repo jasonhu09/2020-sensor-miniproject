@@ -26,7 +26,7 @@ I choose lab1 for the room. The median of occupancy in lab 1 is 5.0 occupants an
 4. What is the mean and variance of the time interval of the sensor readings? Please plot its probability distribution function. Does it mimic a well-known distribution for connection intervals in large systems?
 
 The mean of the time intervals between sensor readings is 0.99 seconds and the variance of the time intervals between sensor readings is 0.92 seconds.
-
+The time intervals between sensor readings mimics an Erlang distribution, which is often used to model waiting times.
 ![Image](images/Time_Interval_PDF.png)
 
 **Task 3**
@@ -34,6 +34,8 @@ The mean of the time intervals between sensor readings is 0.99 seconds and the v
 1. implement an algorithm that detects anomalies in **temperature** sensor data. Print the percent of "bad" data points and determine the temperature median and variance with these bad data points discarded--the same room you did in Task 2 Question 1.
 
 2. Does a persistent change in temperature always indicate a failed sensor?
+
+A persistent change in temperature does not always indicate a failed sensor. The temperature readings can be affected by a variety of factors such as the air condition being turned on or a window being opened. This could cause a persistent change in temperature but this does not necessarily mean the sensor has failed.
 
 3. What are possible bounds on temperature for each room type?
 
