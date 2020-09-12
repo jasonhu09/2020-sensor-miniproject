@@ -1,4 +1,4 @@
-## Ethan Hung and Jason Hu Sensor Project 
+## Ethan Hung and Jason Hu Sensor Project
 
 **Task 0**
 
@@ -26,12 +26,14 @@ I choose lab1 for the room. The median of occupancy in lab 1 is 5.0 occupants an
 4. What is the mean and variance of the time interval of the sensor readings? Please plot its probability distribution function. Does it mimic a well-known distribution for connection intervals in large systems?
 
 The mean of the time intervals between sensor readings is 0.99 seconds and the variance of the time intervals between sensor readings is 0.92 seconds.
-  
+
 ![Image](images/Time_Interval_PDF.png)
 
 **Task 3**
 
 1. implement an algorithm that detects anomalies in **temperature** sensor data. Print the percent of "bad" data points and determine the temperature median and variance with these bad data points discarded--the same room you did in Task 2 Question 1.
+
+![Image](images/Task3.png)
 
 2. Does a persistent change in temperature always indicate a failed sensor?
 
