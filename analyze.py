@@ -61,18 +61,25 @@ if __name__ == "__main__":
         plt.hist(np.diff(time.values).astype(np.int64) // 1000000000)
         plt.xlabel("Time (seconds)")
 
+        # find the median and variance of all sensors in lab1
         print("Sensor: ", k);
-        print(k, "median by room:")
-        print(data[k].median())
-        print(k, "variance by room:")
-        print(data[k].std()**2)
-        pdf = data[k].plot.density()
+        print(k, "median of lab1:")
+        print(data[k]['lab1'].median())
+        print(k, "variance by lab1:")
+        print(data[k]['lab1'].std()**2)
+
+        # plot the probability density function for each sensor type in lab 1
+        plt.figure()
+        pdf = (data[k]['lab1']).plot.density()
         plt.xlabel(k)
         title = k + ": Probability Density Function"
         plt.title(title)
+        plt.savefig('images/'+k+'_PDF.png')
 
         print("\n")
 
+
+    # finds the mean and variance of the time interval of sensor readings
     times = data["temperature"].index
     timeintervals = times[1:]-times[:-1]
     print("Mean of time intervals: ", timeintervals.mean().total_seconds())
@@ -80,11 +87,13 @@ if __name__ == "__main__":
     var = std**2
     print("Variance of time intervals:", var)
 
-
+    # plot the probability density function fr the time interval of sensor readings
     timeintervalsseconds = timeintervals.total_seconds().to_series()
     timedata = timeintervalsseconds.to_frame();
     pdftime = timedata.plot.density()
     plt.xlabel("Time intervals (seconds)")
     plt.title("Time Intervals: Probability Density Function")
+
+    plt.savefig('images/Time_Interval_PDF.png')
 
     plt.show()
