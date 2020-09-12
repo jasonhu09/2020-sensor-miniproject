@@ -63,6 +63,9 @@ if __name__ == "__main__":
 
         # find the median and variance of all sensors in lab1
         print("Sensor: ", k);
+
+        #print(data[k].mean());
+        #print(data[k].std());
         print(k, "median of lab1:")
         print(data[k]['lab1'].median())
         print(k, "variance by lab1:")
@@ -95,5 +98,19 @@ if __name__ == "__main__":
     plt.title("Time Intervals: Probability Density Function")
 
     plt.savefig('images/Time_Interval_PDF.png')
+
+    officemean = data['temperature']['office'].mean();
+    class1mean = data['temperature']['class1'].mean();
+    lab1mean = data['temperature']['lab1'].mean();
+    officestd = data['temperature']['office'].std();
+    class1std = data['temperature']['class1'].std();
+    lab1std = data['temperature']['lab1'].std();
+    print("office low ", officemean - 2*officestd)
+    print("office high ", officemean + 2*officestd)
+    print("class1 low ", class1mean - 2*class1std)
+    print("class1 high ", class1mean + 2*class1std)
+    print("lab1 low ", lab1mean - 2*lab1std)
+    print("lab1 high ", lab1mean + 2*lab1std)
+
 
     plt.show()
