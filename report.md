@@ -4,27 +4,29 @@
 
 1. What is the greeting string issued by the server to the client upon first connecting?
 
-  The server greets the client with "IoT server starting:  localhost port 8765". The client greets us with "ECE Senior Capstone IoT simulator".
+The server greets the client with "IoT server starting:  localhost port 8765". The client greets us with "ECE Senior Capstone IoT simulator".
 
 **Task 2**
 
 1. What are the median and variance observed from the temperature data?
 
-  I choose lab1 for the room. The median of temperature in lab1 is 20.99 degrees and the variance is 8.57 degrees.
+I choose lab1 for the room. The median of temperature in lab1 is 20.99 degrees and the variance is 8.57 degrees.
 
 2. What are the median and variance observed from the occupancy data?
 
-  I choose lab1 for the room. The median of occupancy in lab 1 is 5.0 occupants and the variance is 5.30 occupants.
+I choose lab1 for the room. The median of occupancy in lab 1 is 5.0 occupants and the variance is 5.30 occupants.
 
 
 3. Plot the probability distribution function for each sensor type?
+
 ![Image](images/Temperature_PDF.png)
 ![Image](images/Occupancy_PDF.png)
 ![Image](images/CO2_PDF.png)
 
 4. What is the mean and variance of the time interval of the sensor readings? Please plot its probability distribution function. Does it mimic a well-known distribution for connection intervals in large systems?
 
-  The mean of the time intervals between sensor readings is 0.99 seconds and the variance of the time intervals between sensor readings is 0.92 seconds.
+The mean of the time intervals between sensor readings is 0.99 seconds and the variance of the time intervals between sensor readings is 0.92 seconds.
+  
 ![Image](images/Time_Interval_PDF.png)
 
 **Task 3**
