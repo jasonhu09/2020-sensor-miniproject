@@ -37,19 +37,22 @@ def load_data(file: Path) -> T.Dict[str, pandas.DataFrame]:
     standev_lab = np.std(temperature_lab)
     mean_lab = np.mean(temperature_lab)
     print ("Standard Deviation of Lab (with bad data): ", standev_lab)
-    print ("Average of Lab (with bad data): ", mean_lab, "\n")
+    print ("Average of Lab (with bad data): ", mean_lab)
+    print ("Variance of Lab (with bad data):", statistics.variance(temperature_lab),"\n")
 
     #calculating standard deviation and mean of class, then printing
     standev_class = np.std(temperature_class)
     mean_class = np.mean(temperature_class)
     print ("Standard Deviation of Class (with bad data) :", standev_class)
-    print ("Average of Class (with bad data):", mean_class, "\n")
+    print ("Average of Class (with bad data):", mean_class)
+    print ("Variance of Class (with bad data):", statistics.variance(temperature_class),"\n")
 
     #calculating standard deviation and mean of office, then printing
     standev_office = np.std(temperature_office)
     mean_office = np.mean(temperature_office)
     print ("Standard Deviation of Office (with bad data) :", standev_office)
-    print ("Average of Office (with bad data):", mean_office, "\n")
+    print ("Average of Office (with bad data):", mean_office)
+    print ("Variance of Office (with bad data):", statistics.variance(temperature_office),"\n")
 
     #finding the length of each temperature list as data is different for each person
     len_lab = len(temperature_lab);
@@ -69,8 +72,7 @@ def load_data(file: Path) -> T.Dict[str, pandas.DataFrame]:
             print("The", x, "frame of the lab is an anomoly.")
 
     for x in range (1, len(bad_data)):
-        y = bad_data[x]
-        temperature_lab.pop(y)
+        temperature_lab.pop(bad_data[x])
 
     for x in range (1,len_office):
         if (temperature_office[x] > (((2 * (standev_office)) + mean_office) or temperature_office[x] < (mean_office - (2 * (standev_office))))):
@@ -87,8 +89,8 @@ def load_data(file: Path) -> T.Dict[str, pandas.DataFrame]:
     print ("\nFor Lab 1, there was", bad_lab_count, "percent of bad data.")
     print ("Standard Deviation of lab (with good data):", standev_lab)
     print ("Average of lab (with good data):", mean_lab)
-    print ("The median of the data set of lab is %s" %(statistics.median(temperature_lab)))
-    print ("The variance of the data set of lab is %s" %(statistics.variance(temperature_lab)))
+    print ("Median of lab (with good data): %s" %(statistics.median(temperature_lab)))
+    print ("Variance of lab (with good data): %s" %(statistics.variance(temperature_lab)))
 
 
 
