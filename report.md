@@ -10,11 +10,11 @@ The server greets the client with "IoT server starting:  localhost port 8765". T
 
 1. What are the median and variance observed from the temperature data?
 
-I choose lab1 for the room. The median of temperature in lab1 is 20.99 degrees and the variance is 8.57 degrees.
+I choose lab1 for the room. The median of temperature in lab1 is 21.004 degrees and the variance is 4.791 degrees.
 
 2. What are the median and variance observed from the occupancy data?
 
-I choose lab1 for the room. The median of occupancy in lab 1 is 5.0 occupants and the variance is 5.30 occupants.
+I choose lab1 for the room. The median of occupancy in lab 1 is 5.0 occupants and the variance is 4.765 occupants.
 
 
 3. Plot the probability distribution function for each sensor type?
@@ -25,7 +25,7 @@ I choose lab1 for the room. The median of occupancy in lab 1 is 5.0 occupants an
 
 4. What is the mean and variance of the time interval of the sensor readings? Please plot its probability distribution function. Does it mimic a well-known distribution for connection intervals in large systems?
 
-The mean of the time intervals between sensor readings is 0.99 seconds and the variance of the time intervals between sensor readings is 0.92 seconds.
+The mean of the time intervals between sensor readings is 0.996 seconds and the variance of the time intervals between sensor readings is 0.993 seconds.
 The time intervals between sensor readings mimics an Erlang distribution, which is often used to model waiting times.
 ![Image](images/Time_Interval_PDF.png)
 
