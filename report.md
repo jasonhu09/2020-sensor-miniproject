@@ -36,11 +36,11 @@ The time intervals between sensor readings mimics an Erlang distribution, which 
 
 2. Does a persistent change in temperature always indicate a failed sensor?
 
-A persistent change in temperature does not always indicate a failed sensor. The temperature readings can be affected by a variety of factors such as the air condition being turned on or a window being opened. This could cause a persistent change in temperature but this does not necessarily mean the sensor has failed.
+A persistent change in temperature does not always indicate a failed sensor. The temperature readings can change due to a variety of factors such as the air condition being turned on or a window being opened. This could cause a persistent change in temperature but this does not necessarily mean the sensor has failed. For example, if the window is left open, there can be a persistant drop in the temperature throughout the day as the outside temperature gets colder.
 
 3. What are possible bounds on temperature for each room type?
 
-Since our algorithm defines an anomoly as a point falling outside the mean ± 2 std, our bounds on temperature for each room type are given below.
+Since our algorithm defines an anomoly as a point falling outside the mean ± 2*std, our bounds on temperature for each room type are given below.
 
 office low:  17.668
 
@@ -59,7 +59,10 @@ lab1 high:  25.466
 1. How is this simulation reflective of the real world?
 
 2. How is this simulation deficient? What factors does it fail to account for?
+The simulation is deficient because it doesn't account for the changes cause by humans such as air condition being turned on or windows being left open. Depending on the time of day, these factors could affect the temperature greatly. For example, if the window is left open, the temperature will drop during the night and it is likely that air conditioning is turned off.
 
 3. How is the difficulty of initially using this Python websockets library as compared to a compiled language e.g. C++ websockets?
+The Python websockets library was easier compared to a compiled language. A client and server can be with a few lines of python code where as in a compiled language such as C++, it takes many more functions to set up websockets.
 
 4. Would it be better to have the server poll the sensors, or the sensors reach out to the server when they have data?
+I believe it would be better to have the server poll the sensors. The sensors are measuring data in short time intervals so you can have a server poll the sensors whenever data is required. Sensors reaching out to the server whenever they have data can potentially be very costly because of these short time intervals.
