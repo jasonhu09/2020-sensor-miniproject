@@ -33,11 +33,22 @@ The time intervals between sensor readings mimics an Erlang distribution, which 
 
 1. implement an algorithm that detects anomalies in **temperature** sensor data. Print the percent of "bad" data points and determine the temperature median and variance with these bad data points discarded--the same room you did in Task 2 Question 1.
 
+
 2. Does a persistent change in temperature always indicate a failed sensor?
 
 A persistent change in temperature does not always indicate a failed sensor. The temperature readings can be affected by a variety of factors such as the air condition being turned on or a window being opened. This could cause a persistent change in temperature but this does not necessarily mean the sensor has failed.
 
 3. What are possible bounds on temperature for each room type?
+
+Since our algorithm defines an anomoly as a point falling outside the mean ± 2 std, our bounds on temperature for each room type are given below.
+office low:  17.668
+office high: 27.960
+
+class1 low:  5.601
+class1 high:  48.042
+
+lab1 low:  16.711
+lab1 high:  25.466
 
 **Task 4**
 
