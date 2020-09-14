@@ -41,13 +41,17 @@ A persistent change in temperature does not always indicate a failed sensor. The
 3. What are possible bounds on temperature for each room type?
 
 Since our algorithm defines an anomoly as a point falling outside the mean ± 2 std, our bounds on temperature for each room type are given below.
+
 office low:  17.668
+
 office high: 27.960
 
 class1 low:  5.601
+
 class1 high:  48.042
 
 lab1 low:  16.711
+
 lab1 high:  25.466
 
 **Task 4**
