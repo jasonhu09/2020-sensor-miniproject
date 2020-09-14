@@ -86,7 +86,7 @@ def load_data(file: Path) -> T.Dict[str, pandas.DataFrame]:
     standev_lab = np.std(temperature_lab)
     mean_lab = np.mean(temperature_lab)
 
-    print ("\nFor Lab 1, there was", bad_lab_count, "percent of bad data.")
+    print ("\nFor Lab 1, there was", percent_baddata, "percent of bad data.")
     print ("Standard Deviation of lab (with good data):", standev_lab)
     print ("Average of lab (with good data):", mean_lab)
     print ("Median of lab (with good data): %s" %(statistics.median(temperature_lab)))
