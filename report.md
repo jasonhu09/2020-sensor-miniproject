@@ -1,5 +1,13 @@
 # Ethan Hung and Jason Hu Sensor Project
 
+Data used in this report come from new.txt.
+
+To run our solutions, use:
+
+python analyze.py new.txt
+
+python detect.py new.txt
+
 ## Task 0
 
 ### 1. What is the greeting string issued by the server to the client upon first connecting?
@@ -71,4 +79,4 @@ The Python websockets library was easier compared to a compiled language. A clie
 
 ### 4. Would it be better to have the server poll the sensors, or the sensors reach out to the server when they have data?
 
-I believe it would be better to have the server poll the sensors. The sensors are measuring data in short time intervals so you can have a server poll the sensors whenever data is required. Sensors reaching out to the server whenever they have data can potentially be very costly because of these short time intervals.
+I believe it would be better to have the server poll the sensors. The sensors are constantly measuring data in short time intervals so you can have a server poll the sensors only when data is required. Sensors reaching out to the server whenever they have data can potentially be very costly because of these short time intervals. Also, the server would spend a lot of time waiting if the sensors reach out whenever they have data.
