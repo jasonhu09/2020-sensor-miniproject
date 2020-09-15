@@ -58,6 +58,9 @@ lab1 high:  25.466
 
 ### 1. How is this simulation reflective of the real world?
 
+Simulations like these happen all the time where companies are constantly receiving data from numerous sources 24/7. With all data, there will be an high probability where we get bad data or outliers, which allows us to fix our modeling or point out things that are not working.Companies that deal with this data usually want statistics too, which is something we did in task 2 and a bit of in task 3. These statistics are usually much more specific than what we did, but it does provide a good starting point. Based on our intuition and knowledge, we will be asked about the results and our interpretation of those results.
+
+
 ### 2. How is this simulation deficient? What factors does it fail to account for?
 
 The simulation is deficient because it doesn't account for the changes cause by humans such as air condition being turned on or windows being left open. Depending on the time of day, these factors could affect the temperature greatly. For example, if the window is left open, the temperature will drop during the night and it is likely that air conditioning is turned off.
