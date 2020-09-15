@@ -43,16 +43,16 @@ def load_data(file: Path) -> T.Dict[str, pandas.DataFrame]:
     #calculating standard deviation and mean of class, then printing
     standev_class = np.std(temperature_class)
     mean_class = np.mean(temperature_class)
-    print ("Standard Deviation of Class (with bad data) :", standev_class)
-    print ("Average of Class (with bad data):", mean_class)
-    print ("Variance of Class (with bad data):", statistics.variance(temperature_class),"\n")
+    #print ("Standard Deviation of Class (with bad data) :", standev_class)
+    #print ("Average of Class (with bad data):", mean_class)
+    #print ("Variance of Class (with bad data):", statistics.variance(temperature_class),"\n")
 
     #calculating standard deviation and mean of office, then printing
     standev_office = np.std(temperature_office)
     mean_office = np.mean(temperature_office)
-    print ("Standard Deviation of Office (with bad data) :", standev_office)
-    print ("Average of Office (with bad data):", mean_office)
-    print ("Variance of Office (with bad data):", statistics.variance(temperature_office),"\n")
+    #print ("Standard Deviation of Office (with bad data) :", standev_office)
+    #print ("Average of Office (with bad data):", mean_office)
+    #print ("Variance of Office (with bad data):", statistics.variance(temperature_office),"\n")
 
     #finding the length of each temperature list as data is different for each person
     len_lab = len(temperature_lab);
