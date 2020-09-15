@@ -1,5 +1,11 @@
 # Ethan Hung and Jason Hu Sensor Project
 
+Data used in this report come from new.txt.
+
+To run our solutions, use:
+python analyze.py new.txt
+python detect.py new.txt
+
 ## Task 0
 
 ### 1. What is the greeting string issued by the server to the client upon first connecting?
