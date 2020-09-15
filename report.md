@@ -32,7 +32,7 @@ The time intervals between sensor readings mimics an Erlang distribution, which 
 ## Task 3
 
 ### 1. implement an algorithm that detects anomalies in **temperature** sensor data. Print the percent of "bad" data points and determine the temperature median and variance with these bad data points discarded--the same room you did in Task 2 Question 1.
-
+![Image](images/algorithm.png)
 
 ### 2. Does a persistent change in temperature always indicate a failed sensor?
 
