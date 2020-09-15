@@ -3,7 +3,9 @@
 Data used in this report come from new.txt.
 
 To run our solutions, use:
+
 python analyze.py new.txt
+
 python detect.py new.txt
 
 ## Task 0
