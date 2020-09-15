@@ -66,7 +66,7 @@ lab1 high:  25.466
 
 ### 1. How is this simulation reflective of the real world?
 
-Simulations like these happen all the time where companies are constantly receiving data from numerous sources 24/7. With all data, there will be an high probability where we get bad data or outliers, which allows us to fix our modeling or point out things that are not working.Companies that deal with this data usually want statistics too, which is something we did in task 2 and a bit of in task 3. These statistics are usually much more specific than what we did, but it does provide a good starting point. Based on our intuition and knowledge, we will be asked about the results and our interpretation of those results.
+Simulations like these happen all the time where companies are constantly receiving data from numerous sources 24/7. With all data, there will be an high probability where we get bad data or outliers, which allows us to fix our modeling or point out things that are not working. Companies that deal with this data usually want statistics too, which is something we did in task 2 and a bit of in task 3. These statistics are usually much more specific than what we did, but it does provide a good starting point. Based on our intuition and knowledge, we will be asked about the results and our interpretation of those results. Also, the simulation uses data generated from distributions reflective of the real world. For example, the time interval data is generated using an erlang distribution, which is reflective of waiting times.
 
 
 ### 2. How is this simulation deficient? What factors does it fail to account for?
