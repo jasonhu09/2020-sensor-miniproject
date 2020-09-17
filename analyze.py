@@ -78,6 +78,13 @@ if __name__ == "__main__":
         plt.title(title)
         plt.savefig('images/'+k+'_PDF.png')
 
+        plt.figure()
+        h = data[k]['lab1'].hist()
+        plt.xlabel(k)
+        plt.title("Histogram of "+ k)
+        plt.ylabel("Number of sensor readings")
+        plt.savefig('images/'+k+'_histogram.png')
+
         print("\n")
 
 
@@ -97,6 +104,12 @@ if __name__ == "__main__":
     plt.title("Time Intervals: Probability Density Function")
 
     plt.savefig('images/Time_Interval_PDF.png')
+
+    histtime = timedata.hist()
+    plt.xlabel("Time Intervals")
+    plt.title("Histogram of time intervals")
+    plt.ylabel("Number of sensor readings")
+    plt.savefig('images/Time_Interval_histogram.png')
 
     officemean = data['temperature']['office'].mean();
     class1mean = data['temperature']['class1'].mean();

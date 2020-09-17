@@ -35,13 +35,16 @@ I choose lab1 for the room. The median of temperature in lab1 is 21.004 degrees 
 I choose lab1 for the room. The median of occupancy in lab 1 is 5.0 occupants and the variance is 4.765 occupants.
 
 
-### 3. Plot the probability distribution function for each sensor type?
+### 3. Plot the histogram probability distribution function for each sensor type
 
+![Image](images/Temperature_histogram.png)
+![Image](images/Occupancy_histogram.png)
+![Image](images/CO2_histogram.png)
 ![Image](images/Temperature_PDF.png)
 ![Image](images/Occupancy_PDF.png)
 ![Image](images/CO2_PDF.png)
 
-### 4. What is the mean and variance of the time interval of the sensor readings? Please plot its probability distribution function. Does it mimic a well-known distribution for connection intervals in large systems?
+### 4. What is the mean and variance of the time interval of the sensor readings? Please plot its histogram and probability distribution function. Does it mimic a well-known distribution for connection intervals in large systems?
 
 The mean of the time intervals between sensor readings is 0.996 seconds and the variance of the time intervals between sensor readings is 0.993 seconds.
 The time intervals between sensor readings mimics an Erlang distribution, which is often used to model waiting times.
