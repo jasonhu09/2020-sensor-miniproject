@@ -35,7 +35,7 @@ I choose lab1 for the room. The median of temperature in lab1 is 21.004 degrees 
 I choose lab1 for the room. The median of occupancy in lab 1 is 5.0 occupants and the variance is 4.765 occupants.
 
 
-### 3. Plot the histogram probability distribution function for each sensor type
+### 3. Plot the histogram and probability distribution function for each sensor type
 
 ![Image](images/temperature_histogram.png)
 ![Image](images/occupancy_histogram.png)
