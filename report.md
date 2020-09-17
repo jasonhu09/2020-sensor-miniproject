@@ -14,6 +14,16 @@ python detect.py new.txt
 
 The server greets the client with "IoT server starting:  localhost port 8765". The client greets us with "ECE Senior Capstone IoT simulator".
 
+## Task 1
+
+In the first terminal, run:
+
+python -m sp_iotsim.server
+
+in another terminal, run:
+
+python -m sp_iotsim.client -l nameoffile.txt
+
 ## Task 2
 
 ### 1. What are the median and variance observed from the temperature data?
