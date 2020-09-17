@@ -37,9 +37,9 @@ I choose lab1 for the room. The median of occupancy in lab 1 is 5.0 occupants an
 
 ### 3. Plot the histogram probability distribution function for each sensor type
 
-![Image](images/Temperature_histogram.png)
-![Image](images/Occupancy_histogram.png)
-![Image](images/CO2_histogram.png)
+![Image](images/temperature_histogram.png)
+![Image](images/occupancy_histogram.png)
+![Image](images/co2_histogram.png)
 ![Image](images/Temperature_PDF.png)
 ![Image](images/Occupancy_PDF.png)
 ![Image](images/CO2_PDF.png)
