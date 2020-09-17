@@ -48,6 +48,7 @@ I choose lab1 for the room. The median of occupancy in lab 1 is 5.0 occupants an
 
 The mean of the time intervals between sensor readings is 0.996 seconds and the variance of the time intervals between sensor readings is 0.993 seconds.
 The time intervals between sensor readings mimics an Erlang distribution, which is often used to model waiting times.
+![Image](images/Time_Interval_histogram.png)
 ![Image](images/Time_Interval_PDF.png)
 
 ## Task 3
